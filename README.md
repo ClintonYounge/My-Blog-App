@@ -86,7 +86,17 @@ Install this project with:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- More features.
+- Validations and Model specs.
+- Processing data in models.
+- Setup and controllers.
+- Controllers specs.
+- Views.
+- Forms.
+- Integration specs for Views and fixing n+1 problems.
+- Add Devise.
+- Add authorization rules.
+- Add API endpoints.
+- API documentation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
