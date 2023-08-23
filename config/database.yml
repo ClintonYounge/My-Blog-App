@@ -1,19 +1,19 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: myblogapp_development
+  database: MyBlogApp_development
   pool: 5
   host: localhost
   username: postgres
-  password: 3009
+  password: <%= ENV["MYBLOGAPP_DATABASE_PASSWORD"] %>
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: myblogapp_test
+  database: MyBlogApp_test
   pool: 5
   username: postgres
-  password: 3009
+  password: <%= ENV["MYBLOGAPP_DATABASE_PASSWORD"] %>
 
 staging:
   url: <%= ENV['DATABASE_URL'] %>
