@@ -36,7 +36,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Data Model
+- Data Model.
+- Processing data in models.
 
 ## Getting Started
 
@@ -87,7 +88,6 @@ Install this project with:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - Validations and Model specs.
-- Processing data in models.
 - Setup and controllers.
 - Controllers specs.
 - Views.
