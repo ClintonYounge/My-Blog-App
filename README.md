@@ -10,6 +10,7 @@
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
+- [Run tests](#run-tests)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -38,6 +39,7 @@
 
 - Data Model.
 - Processing data in models.
+- Validations and Model specs.
 
 ## Getting Started
 
@@ -74,6 +76,12 @@ Install this project with:
   bundle install
 ```
 
+### Run tests
+
+To run tests, run the following command:
+
+Run the `rspec` command in your console to run the tests.
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Clinton Younge**
@@ -86,8 +94,6 @@ Install this project with:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-- Validations and Model specs.
 - Setup and controllers.
 - Controllers specs.
 - Views.
