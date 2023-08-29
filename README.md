@@ -40,6 +40,7 @@
 - Data Model.
 - Processing data in models.
 - Validations and Model specs.
+- Setup controllers and basic routing.
 
 ## Getting Started
 
@@ -94,7 +95,6 @@ Run the `rspec` command in your console to run the tests.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-- Setup and controllers.
 - Controllers specs.
 - Views.
 - Forms.
@@ -110,7 +110,7 @@ Run the `rspec` command in your console to run the tests.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/ClintonYounge/My-Blog-App/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
