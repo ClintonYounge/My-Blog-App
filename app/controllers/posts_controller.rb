@@ -9,5 +9,5 @@ class PostsController < ApplicationController
     puts "User: #{@user.inspect}"
     @post = @user.posts.find(params[:id])
     puts "Post: #{@post.inspect}"
-  end  
+  end
 end
