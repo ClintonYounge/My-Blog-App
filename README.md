@@ -41,6 +41,7 @@
 - Processing data in models.
 - Validations and Model specs.
 - Setup controllers and basic routing.
+- Controllers specs.
 
 ## Getting Started
 
@@ -95,7 +96,6 @@ Run the `rspec` command in your console to run the tests.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-- Controllers specs.
 - Views.
 - Forms.
 - Integration specs for Views and fixing n+1 problems.
