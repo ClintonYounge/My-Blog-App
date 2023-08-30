@@ -6,8 +6,6 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    puts "User: #{@user.inspect}"
     @post = @user.posts.find(params[:id])
-    puts "Post: #{@post.inspect}"
   end
 end
