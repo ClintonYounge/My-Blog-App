@@ -1,1 +1,14 @@
-<h1>Here are all the users</h1>
+<h1>Users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <a href="<%= user_path(user) %>">
+        <% if user.photo.present? %>
+          <img src="https://th.bing.com/th/id/R.df818c6db2fe74a4230ccc863663226e?rik=Bt%2fD%2bcd60%2bv0KQ&pid=ImgRaw&r=0" alt="<%= user.name %>'s Photo" />
+        <% end %>
+        <%= user.name %> - Number of posts: <%= user.posts_counter %>
+      </a>
+    </li>
+  <% end %>
+</ul>
