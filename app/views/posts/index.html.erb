@@ -9,7 +9,7 @@
         <%= render partial: 'shared/user_card', locals: { user: @user } %>
       </div>
 
-      <% @user.posts.each do |post| %>
+      <% @user.recent_posts.each do |post| %>
           <a href="<%= user_post_path(@user, post) %>">
             <div class='post-container'>
               <h2 class='post-title'><%= post.title %></h2>
@@ -17,9 +17,9 @@
               <p class='counters'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
             </div>
             
-            <% if post.comments.present? %>
+            <% if post.recent_comments.present? %>
               <div class='comments-section'>
-                <% post.comments.each do |comment| %>
+                <% post.recent_comments.each do |comment| %>
                   <p class='comment'><%= comment.author.name %>: <%= comment.text %></p>
                 <% end %>
               </div>
