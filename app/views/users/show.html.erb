@@ -1,1 +1,30 @@
-<h1>Here is the main page for a given user</h1>
+<html>
+  <head>
+    <%= stylesheet_link_tag "styles" %>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div class='user-card'>
+        <%= render partial: 'shared/user_card', locals: { user: @user } %>
+      </div>
+
+      <div class='bio'>
+        <p><strong>Bio</strong></p>
+        <p><%= @user.bio %></p>
+      </div>
+
+      <div>
+        <% @user.recent_posts.each do |post| %>
+          <div class='post-container'>
+            <h2 class='post-title'><%= post.title %></h2>
+            <p><%= truncate(post.text, length: 50, separator: ' ') %></p>
+            <p class='counters'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <p class='see-posts'><a href="<%= user_posts_path(@user) %>">See all posts</a></p>
+    </div>
+  </body>
+</html>

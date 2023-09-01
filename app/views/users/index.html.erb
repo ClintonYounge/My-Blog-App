@@ -1,1 +1,18 @@
-<h1>Here are all the users</h1>
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <%= stylesheet_link_tag "styles" %>
+  </head>
+
+  <body>
+    <div class='container'>
+      <h1>Users</h1>
+      <% @users.each do |user| %>
+        <a href="<%= user_path(user) %>" class="user-card">
+          <%= render partial: 'shared/user_card', locals: { user: user } %>
+        </a>
+      <% end %>
+    </div>
+  </body>
+</html>
