@@ -9,7 +9,7 @@
         <%= render partial: 'shared/user_card', locals: { user: @user } %>
       </div>
 
-      <% @user.recent_posts.each do |post| %>
+      <% @user.posts.each do |post| %>
           <a href="<%= user_post_path(@user, post) %>">
             <div class='post-container'>
               <h2 class='post-title'><%= post.title %></h2>

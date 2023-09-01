@@ -15,7 +15,7 @@
       </div>
 
       <div>
-        <% @user.posts.each do |post| %>
+        <% @user.recent_posts.each do |post| %>
           <div class='post-container'>
             <h2 class='post-title'><%= post.title %></h2>
             <p><%= truncate(post.text, length: 50, separator: ' ') %></p>
