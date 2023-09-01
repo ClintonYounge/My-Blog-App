@@ -1,17 +1,30 @@
-<img src="https://th.bing.com/th/id/R.df818c6db2fe74a4230ccc863663226e?rik=Bt%2fD%2bcd60%2bv0KQ&pid=ImgRaw&r=0" alt="<%= @user.name %>'s Photo" />
-<h1><%= @user.name %></h1>
-<p>Number of posts: <%= @user.posts_counter %></p>
-<p><strong>Bio</strong><br> <%= @user.bio %></p>
+<html>
+  <head>
+    <%= stylesheet_link_tag "styles" %>
+  </head>
 
-<ul>
-  <% @user.posts.each do |post| %>
-    <li>
-      <%= post.title %><br>
-      <%= truncate(post.text, length: 50, separator: ' ') %> <br>
-      Comments: <%= post.comments_counter %>
-      Likes: <%= post.likes_counter %>
-    </li>
-  <% end %>
+  <body>
+    <div class='container'>
+      <div class='user-card'>
+        <%= render partial: 'shared/user_card', locals: { user: @user } %>
+      </div>
 
-  <a href="<%= user_posts_path(@user) %>">See all posts</a>
-</ul>
+      <div class='bio'>
+        <p><strong>Bio</strong></p>
+        <p><%= @user.bio %></p>
+      </div>
+
+      <div>
+        <% @user.posts.each do |post| %>
+          <div class='post-container'>
+            <h2 class='post-title'><%= post.title %></h2>
+            <p><%= truncate(post.text, length: 50, separator: ' ') %></p>
+            <p class='counters'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <p class='see-posts'><a href="<%= user_posts_path(@user) %>">See all posts</a></p>
+    </div>
+  </body>
+</html>
