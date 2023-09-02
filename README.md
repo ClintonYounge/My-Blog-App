@@ -44,6 +44,8 @@
 - Controllers specs.
 - Structured views.
 - Styling.
+- Form for creating post and comments.
+- Feature to like a post.
 
 ## Getting Started
 
@@ -98,7 +100,6 @@ Run the `rspec` command in your console to run the tests.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-- Forms.
 - Integration specs for Views and fixing n+1 problems.
 - Add Devise.
 - Add authorization rules.
