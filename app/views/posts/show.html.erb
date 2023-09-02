@@ -4,6 +4,11 @@
   </head>
 
   <body>
+    <%= form_with(model: @post.likes.new, local: true, url: user_post_likes_path(@user, @post)) do |form| %>
+      <%= form.hidden_field :post_id, value: @post.id %>
+      <%= form.submit 'Like', class: 'like-button' %>
+    <% end %>
+
     <div class='container'>
       <div class='post-container'>
         <h2 class='post-title'><%= @post.title %></h2>
@@ -17,6 +22,13 @@
             <p class='comment'><%= comment.author.name %>: <%= comment.text %></p>
           <% end %>
         </div>
+      <% end %>
+    </div>
+    <div>
+      <%= form_with(model: Comment.new, url: user_post_comments_path(@user, @post), method: :post) do |form| %>
+        <%= form.label :text, 'Comment' %>
+        <%= form.text_area :text %>
+        <%= form.submit 'Add Comment' %>
       <% end %>
     </div>
   </body>
