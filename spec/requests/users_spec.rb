@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :request do
   describe 'GET #index' do
     before :each do
-      get users_path
+      user = User.create(name: 'Cjay', bio: 'On my way to full stack :D', posts_counter: 0)
+      get users_path(user)
     end
 
     it 'returns a successful response' do
@@ -15,7 +16,7 @@ RSpec.describe UsersController, type: :request do
     end
 
     it 'includes correct placeholder text in response body' do
-      expect(response.body).to include('Here are all the users')
+      expect(response.body).to include('Cjay')
     end
   end
 
@@ -34,7 +35,7 @@ RSpec.describe UsersController, type: :request do
     end
 
     it 'includes correct placeholder text in response body' do
-      expect(response.body).to include('Here is the main page for a given user')
+      expect(response.body).to include('On my way to full stack :D')
     end
   end
 end

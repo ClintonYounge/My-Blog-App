@@ -1,0 +1,8 @@
+<%= form_with(model: Comment.new, url: user_post_comments_path(@user, @post), method: :post) do |form| %>
+  <div class="form-group">
+    <%= form.label :text, 'Comment' %>
+    <%= form.text_area :text %>
+  </div>
+
+  <%= form.submit 'Add Comment' %>
+<% end %>

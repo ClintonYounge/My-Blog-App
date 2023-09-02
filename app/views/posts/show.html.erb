@@ -4,6 +4,11 @@
   </head>
 
   <body>
+    <%= form_with(model: @post.likes.new, local: true, url: user_post_likes_path(@user, @post)) do |form| %>
+      <%= form.hidden_field :post_id, value: @post.id %>
+      <%= form.submit 'Like', class: 'like-button' %>
+    <% end %>
+
     <div class='container'>
       <div class='post-container'>
         <h2 class='post-title'><%= @post.title %></h2>
@@ -19,5 +24,6 @@
         </div>
       <% end %>
     </div>
+    <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post) %>
   </body>
 </html>

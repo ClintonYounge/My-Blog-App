@@ -16,7 +16,7 @@ RSpec.describe PostsController, type: :request do
     end
 
     it 'includes correct placeholder text in response body' do
-      expect(response.body).to include('Here is a list of posts for a given user')
+      expect(response.body).to include('Cjay')
     end
   end
 
@@ -36,7 +36,7 @@ RSpec.describe PostsController, type: :request do
     end
 
     it 'includes correct placeholder text in response body' do
-      expect(response.body).to include('Here is a specific posts for a given user')
+      expect(response.body).to include('My First Post')
     end
   end
 end
