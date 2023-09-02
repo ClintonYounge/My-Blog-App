@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :request do
   describe 'GET #index' do
     before :each do
       user = User.create(name: 'Cjay', bio: 'On my way to full stack :D', posts_counter: 0)
-      get users_path
+      get users_path(user)
     end
 
     it 'returns a successful response' do
