@@ -24,12 +24,6 @@
         </div>
       <% end %>
     </div>
-    <div>
-      <%= form_with(model: Comment.new, url: user_post_comments_path(@user, @post), method: :post) do |form| %>
-        <%= form.label :text, 'Comment' %>
-        <%= form.text_area :text %>
-        <%= form.submit 'Add Comment' %>
-      <% end %>
-    </div>
+    <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post) %>
   </body>
 </html>
