@@ -18,7 +18,7 @@
       
       <% if @post.comments.present? %>
         <div class='comments-section'>
-          <% @post.comments.each do |comment| %>
+          <% @post.comments.includes([:author]).each do |comment| %>
             <p class='comment'><%= comment.author.name %>: <%= comment.text %></p>
           <% end %>
         </div>

@@ -19,13 +19,14 @@
           
           <% if post.recent_comments.present? %>
             <div class='comments-section'>
-              <% post.recent_comments.each do |comment| %>
+              <% post.recent_comments.includes([:author]).each do |comment| %>
                 <p class='comment'><%= comment.author.name %>: <%= comment.text %></p>
               <% end %>
             </div>
           <% end %>
         </a>
       <% end %>
+
       <%= button_to 'Create Post', new_user_post_path(current_user), method: :get %>
     </div>
   </body>
