@@ -46,7 +46,7 @@ RSpec.describe 'User show page', type: :feature do
     expect(page).to have_content(fourth_post.text)
     expect(page).to have_content(fifth_post.text)
   end
-  
+
   it 'I can see a button that lets me view all of the user posts' do
     visit "/users/#{User.first.id}"
     expect(page).to have_link('See all posts')
