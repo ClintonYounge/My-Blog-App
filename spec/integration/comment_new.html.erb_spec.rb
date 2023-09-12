@@ -10,7 +10,7 @@ RSpec.describe 'Comment new', type: :feature do
     @post3 = Post.create(author: @user3, title: 'My Third Post', text: 'This is my third post content.')
   end
 
-  it 'Can add a comment' do
+  it 'Can see the new comment page' do
     visit '/users'
     click_link 'Cjay'
     expect(page).to have_current_path("/users/#{User.first.id}")
