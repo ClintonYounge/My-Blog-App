@@ -46,6 +46,8 @@
 - Styling.
 - Form for creating post and comments.
 - Feature to like a post.
+- Eager loading.
+- Integration tests.
 
 ## Getting Started
 
