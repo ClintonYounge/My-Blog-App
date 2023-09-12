@@ -16,11 +16,13 @@
 
       <div>
         <% @user.recent_posts.each do |post| %>
-          <div class='post-container'>
-            <h2 class='post-title'><%= post.title %></h2>
-            <p><%= truncate(post.text, length: 50, separator: ' ') %></p>
-            <p class='counters'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
-          </div>
+          <a href="<%= user_post_path(@user, post) %>">
+            <div class='post-container'>
+              <h2 class='post-title'><%= post.title %></h2>
+              <p><%= truncate(post.text, length: 50, separator: ' ') %></p>
+              <p class='counters'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+            </div>
+          </a>
         <% end %>
       </div>
 
