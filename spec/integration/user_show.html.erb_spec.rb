@@ -46,4 +46,20 @@ RSpec.describe 'User show page', type: :feature do
     expect(page).to have_content('My Fourth Post')
     expect(page).to have_content('My Fifth Post')
   end
+  it 'I can see a button that lets me view all of the user posts' do
+    visit "/users/#{User.first.id}"
+    expect(page).to have_link('See all posts')
+  end
+  it 'When I click a user post, it redirects me to that post show page' do
+    Post.create(author: @user1, title: 'My First Post', text: 'This is my post content.')
+    visit "/users/#{User.first.id}"
+    click_link 'My First Post'
+    expect(page).to have_current_path("/users/#{User.first.id}/posts/#{Post.first.id}")
+  end
+  it 'When I click the See all posts button, it redirects me to the user posts index page' do
+    Post.create(author: @user1, title: 'My First Post', text: 'This is my post content.')
+    visit "/users/#{User.first.id}"
+    click_link 'See all posts'
+    expect(page).to have_current_path("/users/#{User.first.id}/posts")
+  end
 end
