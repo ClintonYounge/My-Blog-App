@@ -11,6 +11,7 @@
 
     <div class='container'>
       <div class='post-container'>
+        <p>This post was written by: <%=@post.author.name %></p>
         <h2 class='post-title'><%= @post.title %></h2>
         <p><%= @post.text %></p>
         <p class='counters'>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>

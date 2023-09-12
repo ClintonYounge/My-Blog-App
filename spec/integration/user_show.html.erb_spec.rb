@@ -34,18 +34,19 @@ RSpec.describe 'User show page', type: :feature do
   end
 
   it 'I can see the user last 3 posts' do
-    Post.create(author: @user1, title: 'My First Post', text: 'This is my post content.')
-    Post.create(author: @user1, title: 'My Second Post', text: 'This is my post content.')
-    Post.create(author: @user1, title: 'My Third Post', text: 'This is my post content.')
-    Post.create(author: @user1, title: 'My Fourth Post', text: 'This is my post content.')
-    Post.create(author: @user1, title: 'My Fifth Post', text: 'This is my post content.')
+    first_post = Post.create(author: @user1, title: 'My First Post', text: 'This is my first post content.')
+    second_post = Post.create(author: @user1, title: 'My Second Post', text: 'This is my second post content.')
+    third_post = Post.create(author: @user1, title: 'My Third Post', text: 'This is my third post content.')
+    fourth_post = Post.create(author: @user1, title: 'My Fourth Post', text: 'This is my fourth post content.')
+    fifth_post = Post.create(author: @user1, title: 'My Fifth Post', text: 'This is my fifth post content.')
     visit "/users/#{User.first.id}"
-    expect(page).not_to have_content('My First Post')
-    expect(page).not_to have_content('My Second Post')
-    expect(page).to have_content('My Third Post')
-    expect(page).to have_content('My Fourth Post')
-    expect(page).to have_content('My Fifth Post')
+    expect(page).not_to have_content(first_post.text)
+    expect(page).not_to have_content(second_post.text)
+    expect(page).to have_content(third_post.text)
+    expect(page).to have_content(fourth_post.text)
+    expect(page).to have_content(fifth_post.text)
   end
+  
   it 'I can see a button that lets me view all of the user posts' do
     visit "/users/#{User.first.id}"
     expect(page).to have_link('See all posts')
