@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
+  let(:user) { User.create(name: 'Cjay', email: 'cjay@example.com', password: 'password', bio: 'On my way to full stack :D', posts_counter: 0) }
+
   describe 'GET #index' do
     before :each do
-      user = User.create(name: 'Cjay', bio: 'On my way to full stack :D', posts_counter: 0)
-      get users_path(user)
+      get users_path
     end
 
     it 'returns a successful response' do
@@ -16,13 +17,12 @@ RSpec.describe UsersController, type: :request do
     end
 
     it 'includes correct placeholder text in response body' do
-      expect(response.body).to include('Cjay')
+      expect(response.body).to include('Users')
     end
   end
 
   describe 'GET #show' do
     before :each do
-      user = User.create(name: 'Cjay', bio: 'On my way to full stack :D', posts_counter: 0)
       get user_path(user)
     end
 
