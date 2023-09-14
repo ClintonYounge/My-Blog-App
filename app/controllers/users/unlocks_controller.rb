@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::Passwords::UnlocksController < Devise::UnlocksController
   # GET /resource/unlock/new
   # def new
