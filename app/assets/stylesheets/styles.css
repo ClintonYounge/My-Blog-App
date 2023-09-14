@@ -98,7 +98,8 @@ body {
 }
 
 .login_button,
-.sign_up_button {
+.sign_up_button,
+.send_reset_password_button {
   width: 100%;
   padding: 8px;
 }
