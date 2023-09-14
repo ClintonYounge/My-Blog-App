@@ -20,8 +20,15 @@ Devise.setup do |config|
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
 
-  # ==> Mailer Configuration
-  config.mailer = 'CustomDeviseMailer'
+  # Include default devise modules.
+  config.authentication_keys = [:email]
+  config.case_insensitive_keys = [:email]
+  config.strip_whitespace_keys = [:email]
+  config.skip_session_storage = [:http_auth]
+  config.stretches = Rails.env.test? ? 1 : 10
+  config.expire_all_remember_me_on_sign_out = true
+  config.sign_out_via = :delete
+  
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
