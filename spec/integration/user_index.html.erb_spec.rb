@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'User index page', type: :feature do
   before do
-    @user1 = User.create(name: 'Cjay', bio: 'Cjay bio', email: 'cjay@example.com', password: 'password', posts_counter: 0)
+    @user1 = User.create(name: 'Cjay', bio: 'Cjay bio', email: 'cjay@example.com', password: 'password',
+                         posts_counter: 0)
     @user2 = User.create(name: 'Max', bio: 'Max bio', email: 'max@example.com', password: 'password', posts_counter: 0)
-    @user3 = User.create(name: 'Ahmed', bio: 'Ahmed bio', email: 'ahmed@example.com', password: 'password', posts_counter: 0)
+    @user3 = User.create(name: 'Ahmed', bio: 'Ahmed bio', email: 'ahmed@example.com', password: 'password',
+                         posts_counter: 0)
   end
 
   it 'displays the username of all users' do

@@ -23,7 +23,7 @@ RSpec.describe Post, type: :model do
     post = Post.create(author: user, title: 'Hello', text: 'This is my first post')
 
     5.times do
-      Comment.create(author: user, post: post, text: 'This is a comment')
+      Comment.create(author: user, post:, text: 'This is a comment')
     end
 
     expect(post.recent_comments.length).to eq(5)
@@ -34,7 +34,7 @@ RSpec.describe Post, type: :model do
     post = Post.create(author: user, title: 'Hello', text: 'This is my first post')
 
     2.times do
-      Comment.create(author: user, post: post, text: 'This is a comment')
+      Comment.create(author: user, post:, text: 'This is a comment')
     end
 
     expect(post.recent_comments.length).to eq(2)

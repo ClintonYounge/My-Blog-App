@@ -11,13 +11,13 @@ RSpec.describe Comment, type: :model do
 
   it 'is valid with valid attributes' do
     post = Post.create(author: @user, title: 'Hello', text: 'This is my first post')
-    comment = Comment.new(author: @user, post: post, text: 'Content')
+    comment = Comment.new(author: @user, post:, text: 'Content')
     expect(comment).to be_valid
   end
 
   it 'is invalid without a user' do
     post = Post.create(title: 'Title', text: 'This is my first post')
-    comment = Comment.new(post: post, text: 'Content')
+    comment = Comment.new(post:, text: 'Content')
     expect(comment).to_not be_valid
   end
 
@@ -28,13 +28,13 @@ RSpec.describe Comment, type: :model do
 
   it 'is invalid without text' do
     post = Post.create(author: @user, title: 'Title', text: 'This is my first post')
-    comment = Comment.new(author: @user, post: post)
+    comment = Comment.new(author: @user, post:)
     expect(comment).to_not be_valid
   end
 
   it 'increments the post\'s comments_counter when a comment is created' do
     post = Post.create(title: 'Title', comments_counter: 0, likes_counter: 0, author: @user)
-    comment = Comment.create(author: @user, post: post, text: 'Content')
+    Comment.create(author: @user, post:, text: 'Content')
     post.reload
 
     expect(post.comments_counter).to eq(1)

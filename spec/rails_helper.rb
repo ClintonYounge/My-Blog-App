@@ -20,7 +20,7 @@ RSpec.configure do |config|
   config.before(:each, type: :system) do
     driven_by :rack_test
   end
-  
+
   config.fixture_path = "#{Rails.root}/spec/fixtures"
 
   config.use_transactional_fixtures = true

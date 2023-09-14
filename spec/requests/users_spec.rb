@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
-  let(:user) { User.create(name: 'Cjay', email: 'cjay@example.com', password: 'password', bio: 'On my way to full stack :D', posts_counter: 0) }
+  let(:user) do
+    User.create(name: 'Cjay', email: 'cjay@example.com', password: 'password', bio: 'On my way to full stack :D',
+                posts_counter: 0)
+  end
 
   describe 'GET #index' do
     before :each do

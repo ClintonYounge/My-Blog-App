@@ -47,7 +47,7 @@ RSpec.describe User, type: :model do
     user = User.create(
       name: 'Tom',
       email: 'tom@example.com',
-      password: 'password', 
+      password: 'password',
       photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
       bio: 'Teacher from Mexico.'
     )
