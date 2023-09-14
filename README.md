@@ -99,7 +99,10 @@ Run the `rspec` command in your console to run the tests.
 - Linkedin: [@clinton-younge](https://www.linkedin.com/in/clinton-younge-83386a25a/)
 - Twitter: [@YoungeCjay](https://twitter.com/YoungeCjay)
 
+👤 ** Jiachun Xiang **
 
+- GitHub: https://github.com/mpa-mxiang
+- LinkedIn: https://www.linkedin.com/in/jiachun-lily-xiang-1b197213a/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
