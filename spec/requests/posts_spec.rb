@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :request do
   describe 'GET #index' do
     before :each do
-      user = User.create(name: 'Cjay', bio: 'On my way to full stack :D', posts_counter: 0)
+      user = User.create(name: 'Cjay', email: 'cjay@example.com', password: 'password',
+                         bio: 'On my way to full stack :D', posts_counter: 0)
+      sign_in user
       get user_posts_path(user)
     end
 
@@ -22,7 +24,9 @@ RSpec.describe PostsController, type: :request do
 
   describe 'GET #show' do
     before :each do
-      user = User.create(name: 'Cjay', bio: 'On my way to full stack :D', posts_counter: 0)
+      user = User.create(name: 'Cjay', email: 'cjay@example.com', password: 'password',
+                         bio: 'On my way to full stack :D', posts_counter: 0)
+      sign_in user
       post = Post.create(author: user, title: 'My First Post', text: 'This is my post content.')
       get user_post_path(user, post)
     end

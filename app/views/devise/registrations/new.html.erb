@@ -1,0 +1,35 @@
+<h2>Sign up</h2>
+
+<div class="devise_form_container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="new_user_form">
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div>
+        <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "input_field", autocomplete: "email" %>
+      </div>
+
+      <div>
+        <%= f.text_field :name, class: "input_field", placeholder: "Name" %>
+      </div>
+
+      <div>
+        <%= f.text_area :bio, class: "input_field", placeholder: "Bio", rows: 4 %>
+      </div>
+
+      <div>
+        <%= f.password_field :password, placeholder: "Password", class: "input_field", autocomplete: "new-password" %>
+      </div>
+
+      <div>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "input_field", autocomplete: "new-password" %>
+      </div>
+
+      <div>
+        <%= f.submit "Sign up", class: 'sign_up_button' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= render "devise/shared/links" %>

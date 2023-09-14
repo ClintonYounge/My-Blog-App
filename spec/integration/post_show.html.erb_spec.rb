@@ -2,15 +2,20 @@ require 'rails_helper'
 
 RSpec.describe 'Post show page', type: :feature do
   before do
-    @user1 = User.create(name: 'Cjay', bio: 'Cjay bio', photo: 'https://th.bing.com/th/id/R.df818c6db2fe74a4230ccc863663226e?rik=Bt%2fD%2bcd60%2bv0KQ&pid=ImgRaw&r=0')
-    @user2 = User.create(name: 'Max', bio: 'Max bio', photo: 'https://th.bing.com/th/id/R.df818c6db2fe74a4230ccc863663226e?rik=Bt%2fD%2bcd60%2bv0KQ&pid=ImgRaw&r=0')
-    @user3 = User.create(name: 'Ahmed', bio: 'Ahmed bio', photo: 'https://th.bing.com/th/id/R.df818c6db2fe74a4230ccc863663226e?rik=Bt%2fD%2bcd60%2bv0KQ&pid=ImgRaw&r=0')
+    @user1 = User.create(name: 'Cjay', bio: 'Cjay bio', email: 'cjay@example.com', password: 'password',
+                         posts_counter: 0, photo: 'https://th.bing.com/th/id/R.df818c6db2fe74a4230ccc863663226e?rik=Bt%2fD%2bcd60%2bv0KQ&pid=ImgRaw&r=0')
+    @user2 = User.create(name: 'Max', bio: 'Max bio', email: 'max@example.com', password: 'password', posts_counter: 0,
+                         photo: 'https://th.bing.com/th/id/R.df818c6db2fe74a4230ccc863663226e?rik=Bt%2fD%2bcd60%2bv0KQ&pid=ImgRaw&r=0')
+    @user3 = User.create(name: 'Ahmed', bio: 'Ahmed bio', email: 'ahmed@example.com', password: 'password',
+                         posts_counter: 0, photo: 'https://th.bing.com/th/id/R.df818c6db2fe74a4230ccc863663226e?rik=Bt%2fD%2bcd60%2bv0KQ&pid=ImgRaw&r=0')
     @post1 = Post.create(author: @user1, title: 'User 1 First Post', text: 'This is user 1 first post content.')
     @post2 = Post.create(author: @user2, title: 'User 2 First Post', text: 'This is user 2 first post content.')
     @post3 = Post.create(author: @user2, title: 'User 2 Second Post', text: 'This is user 2 second post content.')
     @post4 = Post.create(author: @user3, title: 'User 3 First Post', text: 'This is user 3 first post content.')
     @post5 = Post.create(author: @user3, title: 'User 3 Second Post', text: 'This is user 3 second post content.')
     @post6 = Post.create(author: @user3, title: 'User 3 Third Post', text: 'This is user 3 third post content.')
+    @current_user = User.create(name: 'Test User', email: 'test@example.com', password: 'password')
+    login_as(@current_user, scope: :user)
   end
 
   it 'shows the post title' do

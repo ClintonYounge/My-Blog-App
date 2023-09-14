@@ -1,0 +1,16 @@
+<%= form_for(resource, as: resource_name, html: { style: 'background-color:white', class: 'd-flex flex-column' }, url: session_path(resource_name)) do |f| %>
+
+  <div class="field">    
+    <%= f.email_field :email, class: " form-control", placeholder: "Username" %>
+  </div>
+
+  <div class="actions">    
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+
+  
+
+  <div class="actions ">
+    <%= f.submit "Log in", class: "btn btn-light w-100 border border-3" %>
+  </div>
+<% end %>
