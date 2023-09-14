@@ -11,6 +11,16 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+  # Include Devise test helpers for controller and view tests
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+
+  # Set the default host for your tests
+  config.before(:each, type: :system) do
+    driven_by :rack_test
+  end
+  
   config.fixture_path = "#{Rails.root}/spec/fixtures"
 
   config.use_transactional_fixtures = true
